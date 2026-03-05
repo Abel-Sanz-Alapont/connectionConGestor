@@ -11,7 +11,7 @@ class GestorPDO extends Connection{
 
         $consulta="SELECT * FROM Person";
         $rtdo=$this->getConn()->query($consulta);
-        $arrayPersonas[];
+        $arrayPersonas=[];
         while($value =$rtdo->fetch(PDO::FETCH_ASSOC)){
             $persona= new Persona($value['id'], $value['name']);
             $arrayPersonas[]=$persona;
