@@ -19,6 +19,7 @@
         echo '<thead><tr><th>id</th><th>name</th></tr></thead>';
 
         //Consultar datos
+        $arrayPersonas =$gestor->listar();
         foreach ($arrayPersonas as $persona) {
             echo '<td>' . $persona->getId() . '</td>';
             echo '<td>' . $persona->getNombre() . '</td>';
