@@ -13,21 +13,16 @@
         require_once "autoload.php";
         echo "<h1>Hello, Welcome DAW Student!</h1>";
 
-        $connection = new Connection();
-
-        //Consulta de Datos
-        $query = 'SELECT * FROM Person';
-        $stmt = $connection->getConn()->query($query);
-
+        $gestor = new GestorPDO();
 
         echo '<table class="table table-striped">';
         echo '<thead><tr><th>id</th><th>name</th></tr></thead>';
-        while ($value = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+        //Consultar datos
+        foreach ($arrayPersonas as $persona) {
+            echo '<td>' . $persona->getId() . '</td>';
+            echo '<td>' . $persona->getNombre() . '</td>';
             echo '<tr>';
-            foreach ($value as $element) {
-                echo '<td>' . $element . '</td>';
-            }
-            echo '</tr>';
         }
         echo '</table>';
 
