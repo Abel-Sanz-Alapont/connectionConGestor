@@ -8,6 +8,8 @@ class Controller
         $this->gestor=$gestor;
     }
     public function index(){
-        $personas=$this->gestor->listar();//devuelve array de objetos 
+        $arrayPersonas=$this->gestor->listar();//devuelve array de objetos
+
+        include "views/listar.php";
     }
 }
