@@ -12,4 +12,11 @@ class Controller
 
         include "views/listar.php";
     }
+
+    public function agregar(){
+
+
+
+        include "views/agregar.php";
+    }
 }
