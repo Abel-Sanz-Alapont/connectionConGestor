@@ -1,32 +1,31 @@
 <?php
 
-class GestorPDO extends Connection{
+class GestorPDO extends Connection
+{
 
     public function __construct()
     {
         return parent::__construct();
     }
 
-    public function listar(){
+    public function listar()
+    {
 
-        $consulta="SELECT * FROM Person";
-        $rtdo=$this->getConn()->query($consulta);
-        $arrayPersonas=[];
-        while($value =$rtdo->fetch(PDO::FETCH_ASSOC)){
-            $persona= new Persona($value['name'], $value['id']);
-            $arrayPersonas[]=$persona;
-
-
+        $consulta = "SELECT * FROM Person";
+        $rtdo = $this->getConn()->query($consulta);
+        $arrayPersonas = [];
+        while ($value = $rtdo->fetch(PDO::FETCH_ASSOC)) {
+            $persona = new Persona($value['name'], $value['id']);
+            $arrayPersonas[] = $persona;
         }
         return $arrayPersonas;
-
-        
     }
     /*
     Preguntar de donde sale el execute()y bindValue()
     */
-    public function agregar(Persona $persona){
-        $consultaSQL= 'INSERT INTO Person (name)  VALUES (:nombre)';//consulta SQL
+    public function agregar(Persona $persona)
+    {
+        $consultaSQL = 'INSERT INTO Person (name)  VALUES (:nombre)'; //consulta SQL
         $stmt = $this->conn->prepare($consultaSQL);
 
         $stmt->bindValue(':nombre', $persona->getNombre());
