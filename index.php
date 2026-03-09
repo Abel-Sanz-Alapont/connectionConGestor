@@ -4,7 +4,8 @@
       
 
         $gestor = new GestorPDO();
+        $controller =new Controller($gestor);
 
         //Consultar datos
-        $arrayPersonas = $gestor->listar();
+        $controller->index();
         ?>
