@@ -18,7 +18,7 @@
                //$controller->eliminar();
                 break;
             case 'agregar':
-               //$controller->agregar();
+               $controller->agregar();
                 break;
 
             default:
