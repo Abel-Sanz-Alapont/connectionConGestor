@@ -1,6 +1,5 @@
         <?php
         require_once "autoload.php";
-        //die(var_dump(scandir(__DIR__)));
 
         $gestor = new GestorPDO();
         $controller = new Controller($gestor);
@@ -11,17 +10,16 @@
 
         switch ($accion) {
             case 'editar':
-               //$controller->editar();
+                //$controller->editar();
                 break;
             case 'eliminar':
-               //$controller->eliminar();
+                //$controller->eliminar();
                 break;
             case 'agregar':
-               $controller->agregar();
+                $controller->agregar();
                 break;
 
             default:
                 $controller->index();
-                break;
         }
         ?>
