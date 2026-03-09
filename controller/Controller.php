@@ -23,6 +23,9 @@ class Controller
 
             $persona = new Persona($nombre);
             $this->gestor->agregar($persona);
+
+            header("Location: index.php");
+            exit;
         }
 
 
