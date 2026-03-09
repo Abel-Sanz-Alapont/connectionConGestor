@@ -19,5 +19,18 @@ class GestorPDO extends Connection{
 
         }
         return $arrayPersonas;
+
+        
+    }
+    /*
+    Preguntar de donde sale el execute()y bindValue()
+    */
+    public function agregar(Persona $persona){
+        $consultaSQL= 'INSERT INTO Person (name)  VALUES (:nombre)';//consulta SQL
+        $stmt = $this->conn->prepare($consultaSQL);
+
+        $stmt->bindValue(':nombre', $persona->getNombre());
+
+        return $stmt->execute();
     }
 }
