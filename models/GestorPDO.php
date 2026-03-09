@@ -13,7 +13,7 @@ class GestorPDO extends Connection{
         $rtdo=$this->getConn()->query($consulta);
         $arrayPersonas=[];
         while($value =$rtdo->fetch(PDO::FETCH_ASSOC)){
-            $persona= new Persona($value['id'], $value['name']);
+            $persona= new Persona($value['name'], $value['id']);
             $arrayPersonas[]=$persona;
 
 
