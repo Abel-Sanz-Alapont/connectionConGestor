@@ -5,7 +5,7 @@ class Persona{
     private $id;
     private $nombre;
 
-    function __construct($id, $nombre)
+    function __construct($nombre, $id=0)
     {
         $this->id=$id;
         $this->nombre=$nombre;
