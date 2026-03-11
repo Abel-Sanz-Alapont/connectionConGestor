@@ -30,6 +30,15 @@ class GestorPDO extends Connection
 
         $stmt->bindValue(':nombre', $persona->getNombre());
 
-        return $stmt->execute();
+        return $stmt->execute();    
+    }
+
+    public function eliminar($id){
+        $consultaSQL= 'DELETE FROM Person WHERE id=:id';
+        $stmt = $this->conn->prepare($consultaSQL);
+
+        $stmt->bindValue(':id', $id);
+        
+        return $stmt->execute();   
     }
 }
