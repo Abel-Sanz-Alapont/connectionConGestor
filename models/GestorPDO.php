@@ -37,7 +37,7 @@ class GestorPDO extends Connection
         $consultaSQL= 'DELETE FROM Person WHERE id=:id';
         $stmt = $this->conn->prepare($consultaSQL);
 
-        $stmt->bindValue(':id', $id);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
         
         return $stmt->execute();   
     }
