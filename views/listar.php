@@ -12,17 +12,21 @@
         <a href="index.php?accion=agregar">Agregar Alumno a la BD</a>
         <div class="container-fluid">
             <?= '<table class="table table-striped">'; ?>
-            <?= '<thead><tr><th>id</th><th>name</th></tr></thead>'; ?>
-            <?php
-
-            foreach ($arrayPersonas as $persona) {
-                        echo '<td>' . $persona->getId() . '</td>';
-                        echo '<td>' . $persona->getNombre() . '</td>';
-                    echo '<tr>';
-                    }
-                echo '</table>';
-            ?>
-
+            <?= '<thead>
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>'; ?>
+            <?php foreach ($arrayPersonas as $persona):?>
+                    <tr>
+                        <td><?=$persona->getId()?></td>
+                        <td><?=$persona->getNombre()?></td>
+                        <td><a href="index.php?accion=eliminar&id=<?=  $persona->getId()?>">Eliminar </td>
+                    <tr>
+                <?php endforeach ?>
+                </table>
         </div>
     </body>
 
