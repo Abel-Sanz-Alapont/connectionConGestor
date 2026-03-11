@@ -13,7 +13,7 @@
                 //$controller->editar();
                 break;
             case 'eliminar':
-                //$controller->eliminar();
+                $controller->eliminar();
                 break;
             case 'agregar':
                 $controller->agregar();
