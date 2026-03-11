@@ -10,7 +10,7 @@
 
         switch ($accion) {
             case 'editar':
-                //$controller->editar();
+                $controller->editar();
                 break;
             case 'eliminar':
                 $controller->eliminar();
