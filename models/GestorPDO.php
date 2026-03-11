@@ -41,4 +41,14 @@ class GestorPDO extends Connection
         
         return $stmt->execute();   
     }
+
+    public function editar($id, $nombre){
+        $consultaSQL = 'UPDATE  Person SET name=:name WHERE id=:id'; //consulta SQL
+        $stmt = $this->conn->prepare($consultaSQL);
+
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->bindValue(':name', $nombre, PDO::PARAM_STR);
+
+        return $stmt->execute();   
+    }
 }

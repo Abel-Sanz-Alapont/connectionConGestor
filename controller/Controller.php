@@ -31,12 +31,21 @@ class Controller
 
         include "views/agregar.php";
     }
-    public function eliminar(){
-        $id=$_GET['id'];
+    public function eliminar()
+    {
+        $id = $_GET['id'];
         $this->gestor->eliminar($id);
 
         header("Location: index.php");
         exit();
-        
+    }
+    public function editar()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+           $this->gestor->editar($_POST['id'], $_POST['nombre']);
+
+            header("Location: index.php");
+            exit;
+        }
     }
 }
